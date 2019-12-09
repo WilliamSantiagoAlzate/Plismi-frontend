@@ -1,0 +1,40 @@
+.girl {
+    width: 100vw !important;
+    margin: 0 !important;
+}
+
+.girl-picture {
+    width: 45vw;
+    margin: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.girl-picture img {
+    width: 35vw !important;
+}
+
+.girl-description {
+    width: 45vw;
+    margin: 2vw;
+}
+
+@media (max-width:800px) {
+    .girl {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .girl-picture {
+        width: 95vw;
+    }
+
+    .girl-picture img {
+        width: 85vw !important;
+    }
+
+    .girl-description {
+        width: 95vw;
+    }
+}
