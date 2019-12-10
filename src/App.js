@@ -7,6 +7,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import Girls from "./components/girls";
 import User from "./components/user";
+import Filter from "./components/filter";
 import Home from "./components/home";
 
 //Import style
@@ -57,7 +58,7 @@ export default class App extends Component {
                   onResize={this.changeHeight}
                   style={this.state.style}
                 />
-                <Footer Icon="fas fa-history"/>
+                <Footer Icon="fas fa-history" Link=""/>
               </div>
             )
           }}/>
@@ -65,8 +66,11 @@ export default class App extends Component {
             return (
               <div className="App">
                 <Header/>
-                <h1>Filtros</h1>
-                <Footer Icon="fas fa-funnel-dollar"/>
+                <Filter
+                  onResize={this.changeHeight}
+                  style={this.state.style}
+                />
+                <Footer Icon="fas fa-funnel-dollar" Link="price-modal"/>
               </div>
             )
           }}/>
@@ -78,7 +82,7 @@ export default class App extends Component {
                   onResize={this.changeHeight}
                   style={this.state.style}
                 />
-                <Footer Icon="fas fa-money-check-alt"/>
+                <Footer Icon="fas fa-money-check-alt" Link="pay-modal"/>
               </div>
             )
           }}/>

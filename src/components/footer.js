@@ -10,7 +10,7 @@ export default class Footer extends Component {
         return (
             <footer className="footer">
                 <div className="container footer-plismi">
-                    <a href="#" className="footer-button">
+                    <a href={"#" + this.props.Link} className="footer-button" data-toggle="modal">
                         <i className={this.props.Icon + " footer-icon"}></i>
                     </a>
                 </div>
