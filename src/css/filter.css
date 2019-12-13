@@ -1,3 +1,18 @@
 .modal-dialog {
     top: 20vh;
 }
+
+.filters {
+    height: 44%;
+    border-radius: 10px;
+    background: rgb(207, 23, 23);
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filters:hover {
+    text-decoration: none !important;
+    background: rgba(207, 23, 23, 0.9);
+}

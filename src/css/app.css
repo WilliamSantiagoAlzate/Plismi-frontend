@@ -2,3 +2,8 @@
     background: rgb(207, 23, 23) !important;
     color: black;
 }
+
+.input-group-text {
+    background: rgb(207, 23, 23) !important;
+    color: black !important;
+}
