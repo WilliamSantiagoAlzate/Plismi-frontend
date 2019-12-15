@@ -7,29 +7,3 @@
     font-size: 150px;
     color: black;
 }
-
-.modal-dialog {
-    top: 20vh;
-}
-
-.modal-header {
-    background: rgb(207, 23, 23);
-}
-
-.modal-body {
-    display: flex;
-    justify-content: space-around;
-}
-
-h5 {
-    color: black;
-}
-
-.logo-pay {
-    font-size: 70px;
-    color: black;
-}
-
-.logo-pay:hover {
-    color: rgb(207, 23, 23);
-}

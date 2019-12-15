@@ -33,6 +33,7 @@ export default class App extends Component {
     };
   }
 
+  //Put height
   changeHeight = e => {
     this.height = document.documentElement.clientHeight - headerHeight;
     this.setState({

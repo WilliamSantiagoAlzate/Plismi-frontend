@@ -7,3 +7,15 @@
     background: rgb(207, 23, 23) !important;
     color: black !important;
 }
+
+.modal-dialog {
+    top: 20vh;
+}
+
+.modal-header {
+    background: rgb(207, 23, 23);
+}
+
+h5 {
+    color: black;
+}
