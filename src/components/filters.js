@@ -21,6 +21,14 @@ export default class Filters extends Component {
                         <form style={{width: '100%'}}>
                             <FilterItem/>
                             <FilterItem/>
+                            <FilterItem/>
+                            <FilterItem/>
+                            <FilterItem/>
+                            <FilterItem/>
+                            <FilterItem/>
+                            <FilterItem/>
+                            <FilterItem/>
+                            <FilterItem/>
                         </form>
                     </div>
                     <div className="modal-footer">

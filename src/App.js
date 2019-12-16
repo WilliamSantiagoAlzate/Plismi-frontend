@@ -9,6 +9,7 @@ import Girls from "./components/girls";
 import User from "./components/user";
 import Filter from "./components/filter";
 import Home from "./components/home";
+import CreditCard from "./components/credit-card";
 
 //Import style
 import './css/app.css';
@@ -80,6 +81,18 @@ export default class App extends Component {
               <div className="App">
                 <Header/>
                 <User
+                  onResize={this.changeHeight}
+                  style={this.state.style}
+                />
+                <Footer Icon="fas fa-money-check-alt" Link="pay-modal"/>
+              </div>
+            )
+          }}/>
+          <Route path="/creditcard" render={() => {
+            return (
+              <div className="App">
+                <Header/>
+                <CreditCard
                   onResize={this.changeHeight}
                   style={this.state.style}
                 />

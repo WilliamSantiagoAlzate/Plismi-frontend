@@ -21,7 +21,7 @@ export default class Pay extends Component {
                             <a href="#" className="pay-buttons">
                                 <i className="fas fa-money-bill logo-pay"></i>
                             </a>
-                            <a href="#" className="pay-buttons">
+                            <a href="/creditcard" className="pay-buttons">
                                 <i className="fas fa-credit-card logo-pay"></i>
                             </a>
                             <a href="#" className="pay-buttons">
