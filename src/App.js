@@ -1,6 +1,6 @@
 //Import react libraries
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //Import components
 import Header from "./components/header";
@@ -47,59 +47,61 @@ export default class App extends Component {
   render() {
     return (
         <Router>
-          <Route exact path="/" render={() => {
-            return (
-              <Home/>
-            )
-          }}/>
-          <Route path="/girls" render={() => {
-            return (
-              <div className="App">
-                <Header/>
-                <Girls 
-                  onResize={this.changeHeight}
-                  style={this.state.style}
-                />
-                <Footer Icon="fas fa-history" Link="history-modal"/>
-              </div>
-            )
-          }}/>
-          <Route path="/filter" render={() => {
-            return (
-              <div className="App">
-                <Header/>
-                <Filter
-                  onResize={this.changeHeight}
-                  style={this.state.style}
-                />
-                <Footer Icon="fas fa-funnel-dollar" Link="price-modal"/>
-              </div>
-            )
-          }}/>
-          <Route path="/user" render={() => {
-            return (
-              <div className="App">
-                <Header/>
-                <User
-                  onResize={this.changeHeight}
-                  style={this.state.style}
-                />
-                <Footer Icon="fas fa-money-check-alt" Link="pay-modal"/>
-              </div>
-            )
-          }}/>
-          <Route path="/creditcard" render={() => {
-            return (
-              <div className="App">
-                <Header/>
-                <CreditCard
-                  onResize={this.changeHeight}
-                  style={this.state.style}
-                />
-                <Footer Icon="fas fa-money-check-alt" Link="pay-modal"/>
-              </div>
-            )
-          }}/>
+          <Switch>
+            <Route exact path="/" render={() => {
+              return (
+                <Home/>
+              )
+            }}/>
+            <Route path="/girls" render={() => {
+              return (
+                <div className="App">
+                  <Header/>
+                  <Girls 
+                    onResize={this.changeHeight}
+                    style={this.state.style}
+                  />
+                  <Footer Icon="fas fa-history" Link="history-modal"/>
+                </div>
+              )
+            }}/>
+            <Route path="/filter" render={() => {
+              return (
+                <div className="App">
+                  <Header/>
+                  <Filter
+                    onResize={this.changeHeight}
+                    style={this.state.style}
+                  />
+                  <Footer Icon="fas fa-funnel-dollar" Link="price-modal"/>
+                </div>
+              )
+            }}/>
+            <Route path="/user" render={() => {
+              return (
+                <div className="App">
+                  <Header/>
+                  <User
+                    onResize={this.changeHeight}
+                    style={this.state.style}
+                  />
+                  <Footer Icon="fas fa-money-check-alt" Link="pay-modal"/>
+                </div>
+              )
+            }}/>
+            <Route path="/creditcard" render={() => {
+              return (
+                <div className="App">
+                  <Header/>
+                  <CreditCard
+                    onResize={this.changeHeight}
+                    style={this.state.style}
+                  />
+                  <Footer Icon="fas fa-money-check-alt" Link="pay-modal"/>
+                </div>
+              )
+            }}/>
+          </Switch>
         </Router>
     );
   }
