@@ -8,6 +8,7 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 //Import components
 import Girl from "./girl";
+import History from "./history";
 
 //Import style
 import '../css/girls.css';
@@ -33,21 +34,24 @@ const responsive = {
 export default class Girls extends Component {
     render() {
         return (
-            <OwlCarousel
-                className="owl-theme girls"
-                loop={false}
-                margin={10}
-                dots={false}
-                center= {true}
-                responsive={responsive}
-                style={this.props.style}
-            >
-                <Girl Height={this.props.style}/>
-                <Girl Height={this.props.style}/>
-                <Girl Height={this.props.style}/>
-                <Girl Height={this.props.style}/>
-                <Girl Height={this.props.style}/>
-            </OwlCarousel>
+            <div>
+                <OwlCarousel
+                    className="owl-theme girls"
+                    loop={false}
+                    margin={10}
+                    dots={false}
+                    center= {true}
+                    responsive={responsive}
+                    style={this.props.style}
+                >
+                    <Girl Height={this.props.style}/>
+                    <Girl Height={this.props.style}/>
+                    <Girl Height={this.props.style}/>
+                    <Girl Height={this.props.style}/>
+                    <Girl Height={this.props.style}/>
+                </OwlCarousel>
+                <History/>
+            </div>
         )
     }
 }

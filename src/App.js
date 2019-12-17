@@ -60,7 +60,7 @@ export default class App extends Component {
                   onResize={this.changeHeight}
                   style={this.state.style}
                 />
-                <Footer Icon="fas fa-history" Link=""/>
+                <Footer Icon="fas fa-history" Link="history-modal"/>
               </div>
             )
           }}/>
