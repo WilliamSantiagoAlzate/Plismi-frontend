@@ -16,3 +16,8 @@
 h1, h4 {
     color: black;
 }
+
+a {
+    width: 100px;
+    margin-top: 10px;
+}

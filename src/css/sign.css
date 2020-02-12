@@ -1,0 +1,16 @@
+.sign {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.left-sign {
+    width: 70%;
+}
+
+.right-sign {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    background: rgb(207, 23, 23);
+}

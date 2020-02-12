@@ -10,6 +10,8 @@ import User from "./components/user";
 import Filter from "./components/filter";
 import Home from "./components/home";
 import CreditCard from "./components/credit-card";
+import SignIn from "./components/signin";
+import SignUp from "./components/signup";
 
 //Import style
 import './css/app.css';
@@ -20,8 +22,6 @@ var headerHeight = 120;
 if (width <= 800) {
   headerHeight = 80;
 }
-
-var URL = window.location.pathname;
 
 //Create App
 export default class App extends Component {
@@ -50,7 +50,15 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/"><Home/></Route>
+          <Route exact path="/">
+            <Home/>
+          </Route>
+          <Route path="/signin">
+            <SignIn/>
+          </Route>
+          <Route path="/signup">
+            <SignUp/>
+          </Route>
           <Route path="/girls">
             <div className="App">
               <Header/>
