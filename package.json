@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://williamsantiagoalzate.github.io/Plismi-react/",
   "dependencies": {
+    "axios": "^0.19.2",
     "gh-pages": "^2.1.1",
     "node-sass": "^4.13.0",
     "react": "^16.12.0",
