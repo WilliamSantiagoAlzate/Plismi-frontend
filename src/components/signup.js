@@ -46,7 +46,7 @@ export default class SignUp extends Component {
         e.preventDefault();
         const validate = this.validate();
         if(validate) {
-            await axios.post('http://localhost:4000/api/users', {
+            await axios.post('http://localhost:4000/api/users/signup', {
                 name: this.state.name,
                 age: this.state.age,
                 phoneNumber: this.state.phoneNumber,

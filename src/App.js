@@ -1,17 +1,18 @@
 //Import react libraries
 import React, { Component } from 'react';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 //Import components
-import Header from "./components/header";
-import Footer from "./components/footer";
-import Girls from "./components/girls";
-import User from "./components/user";
-import Filter from "./components/filter";
-import Home from "./components/home";
-import CreditCard from "./components/credit-card";
-import SignIn from "./components/signin";
-import SignUp from "./components/signup";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Girls from "./components/Girls";
+import User from "./components/User";
+import Filter from "./components/Filter";
+import Home from "./components/Home";
+import EditUser from "./components/EditUser";
+import CreditCard from "./components/CreditCard";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
 
 //Import style
 import './css/app.css';
@@ -48,17 +49,24 @@ export default class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
         <Switch>
+
+          {/* Home page */}
           <Route exact path="/">
             <Home/>
           </Route>
+
+          {/* Sign In page */}
           <Route path="/signin">
             <SignIn/>
           </Route>
+
+          {/* Sign Up page */}
           <Route path="/signup">
             <SignUp/>
           </Route>
+
+          {/* Girls page */}
           <Route path="/girls">
             <div className="App">
               <Header/>
@@ -69,6 +77,8 @@ export default class App extends Component {
               <Footer Icon="fas fa-history" Link="history-modal"/>
             </div>
           </Route>
+
+          {/* Filter page */}
           <Route path="/filter">
             <div className="App">
               <Header/>
@@ -78,7 +88,9 @@ export default class App extends Component {
               />
               <Footer Icon="fas fa-funnel-dollar" Link="price-modal"/>
             </div>
-          </Route> 
+          </Route>
+
+          {/* User page */}
           <Route path="/user">
             <div className="App">
               <Header/>
@@ -86,9 +98,11 @@ export default class App extends Component {
                 onResize={this.changeHeight}
                 style={this.state.style}
               />
-              <Footer Icon="fas fa-money-check-alt" Link="pay-modal"/>
+              <Footer Icon="fas fa-user-cog" Link="settings-modal"/>
             </div>
-          </Route>   
+          </Route>
+
+          {/* Pay with credit card page */}
           <Route path="/creditcard">
             <div className="App">
               <Header/>
@@ -98,9 +112,21 @@ export default class App extends Component {
               />
               <Footer Icon="fas fa-money-check-alt" Link="pay-modal"/>
             </div>
-          </Route>  
+          </Route>
+
+          {/* User page */}
+          <Route path="/editUser">
+            <div className="App">
+              <Header/>
+              <EditUser
+                onResize={this.changeHeight}
+                style={this.state.style}
+              />
+              <Footer Icon="fas fa-user-cog" Link="settings-modal"/>
+            </div>
+          </Route>
+
         </Switch>
-      </BrowserRouter>
     );
   }
 }

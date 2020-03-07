@@ -1,8 +1,22 @@
 //Import react libraries
 import React, { Component } from "react";
 
+//Import components
+import Pay from "./Pay";
+
+//Import style
+import '../css/creditCard.css';
+
 //Create component
 export default class CreditCard extends Component {
+
+    componentWillMount() {
+        let element = document.getElementsByClassName('modal-backdrop');
+        if (element.length === 1) {
+            element[0].parentNode.removeChild(element[0]);
+        };
+    }
+
     render() {
         return (
             <div className="credit-card vw-100 d-flex" style={this.props.style}>
@@ -48,6 +62,8 @@ export default class CreditCard extends Component {
                         </div>
                     </div>
                 </div>
+                {/* Pay modal */}
+                <Pay/>
             </div>
         )
     }

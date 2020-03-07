@@ -1,5 +1,6 @@
 //Import react libraries
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
 //Import style
 import '../css/pay.css';
@@ -18,15 +19,17 @@ export default class Pay extends Component {
                             </button>
                         </div>
                         <div className="modal-body">
-                            <a href="#" className="pay-buttons">
+                            <Link to="#" className="pay-buttons">
                                 <i className="fas fa-money-bill logo-pay"></i>
-                            </a>
-                            <a href="/creditcard" className="pay-buttons">
-                                <i className="fas fa-credit-card logo-pay"></i>
-                            </a>
-                            <a href="#" className="pay-buttons">
+                            </Link>
+                            { window.location.href === window.location.origin + "/creditcard" ? null :
+                                <Link to="/creditcard" className="pay-buttons" >
+                                    <i className="fas fa-credit-card logo-pay"></i>
+                                </Link>
+                            }
+                            <Link to="#" className="pay-buttons">
                                 <i className="fab fa-paypal logo-pay"></i>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

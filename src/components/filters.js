@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 
 //Import components
-import FilterItem from "./filter-item";
+import FilterItem from "./FilterItem";
 
 //Create component
 export default class Filters extends Component {

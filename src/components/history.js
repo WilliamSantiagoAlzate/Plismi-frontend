@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 
 //Import components
-import HistoryItem from "./history-item";
+import HistoryItem from "./HistoryItem";
 
 //Create component
 export default class History extends Component {

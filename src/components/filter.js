@@ -5,8 +5,8 @@ import React, { Component } from "react";
 import '../css/filter.css';
 
 //Import components
-import Filters from "./filters";
-import Price from "./price";
+import Filters from "./Filters";
+import Price from "./Price";
 
 //Create component
 export default class Filter extends Component {

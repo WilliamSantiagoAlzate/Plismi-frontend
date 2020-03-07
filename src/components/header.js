@@ -15,13 +15,13 @@ export default class Header extends Component {
             <header className="header">
                 <div className="container header-plismi">
                     <Link to="/user" className="header-buttons">
-                        <i className="fas fa-user logo-user">User</i>
+                        <i className="fas fa-user logo-user"></i>
                     </Link>
                     <Link to="/girls" className="header-buttons">
                         <img src={logo} alt="logo_plismi" className="logo"/>
                     </Link>
                     <Link to="/filter" className="header-buttons">
-                        <i className="fas fa-sliders-h logo-filter">Filter</i>
+                        <i className="fas fa-sliders-h logo-filter"></i>
                     </Link>
                 </div>
             </header>

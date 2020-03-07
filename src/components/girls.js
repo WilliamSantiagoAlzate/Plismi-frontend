@@ -7,8 +7,8 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 //Import components
-import Girl from "./girl";
-import History from "./history";
+import Girl from "./Girl";
+import History from "./History";
 
 //Import style
 import '../css/girls.css';
