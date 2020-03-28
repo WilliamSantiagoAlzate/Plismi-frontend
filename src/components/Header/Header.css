@@ -1,0 +1,56 @@
+.header {
+    background: rgb(207, 23, 23);
+    height: 60px;
+}
+
+.header-plismi {
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+}
+
+.header-buttons {
+    height: 40px;
+    margin: auto;
+    transform: scale(1);
+    transition: 0.4s;
+}
+
+.header-buttons:hover {
+    transform: scale(1.1);
+    transition: 0.4s;
+}
+
+.logo {
+    height: 40px;
+}
+
+.logo-user {
+    color: black;
+    font-size: 40px;
+}
+
+.logo-filter {
+    color: black;
+    font-size: 40px;
+}
+
+@media (max-width:800px) {
+    .header {
+        height: 40px;
+    }
+
+    .header-plismi {
+        height: 40px;
+        padding: 0 !important;
+        width: 100vw !important;
+    }
+
+    .header-buttons, .logo {
+        height: 30px;
+    }
+
+    .logo-user, .logo-filter {
+        font-size: 30px;
+    }
+}

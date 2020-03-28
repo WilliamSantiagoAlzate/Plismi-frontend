@@ -1,0 +1,14 @@
+.filters {
+    align-items: center;
+    background: rgb(207, 23, 23);
+    border-radius: 10px;
+    display: flex;
+    height: 44%;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.filters:hover {
+    background: rgba(207, 23, 23, 0.9);
+    text-decoration: none !important;
+}

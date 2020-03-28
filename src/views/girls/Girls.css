@@ -1,0 +1,20 @@
+.girls {
+    width: 100vw;
+}
+
+.owl-theme button.owl-prev{
+    left: 20px;
+    position: absolute;
+    top: 40%;
+}
+  
+.owl-theme button.owl-next{
+    position: absolute;
+    right: 20px;
+    top: 40%;
+}
+
+.owl-theme span{
+    color: #000000;
+    font-size: 40px;
+}

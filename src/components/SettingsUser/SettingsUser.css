@@ -1,0 +1,13 @@
+.modal-body {
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo-pay {
+    color: black;
+    font-size: 70px;
+}
+
+.logo-pay:hover {
+    color: rgb(207, 23, 23);
+}
