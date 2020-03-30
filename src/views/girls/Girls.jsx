@@ -32,6 +32,26 @@ const responsive = {
 
 //Create component
 export default class Girls extends Component {
+
+    state = {
+        girls: []
+    }
+
+    //Get data from Star Wars api while I finish setup my database 
+    async getGirls() {
+        let res = await fetch('https://swapi.co/api/people/?format=json');
+        let data = await res.json();
+        data.results.map((i) => {
+            this.setState({
+                girls: [...this.state.girls, i]
+            })
+        });
+    }
+
+    componentWillMount() {
+        this.getGirls();
+    }
+
     render() {
         return (
             <div>
@@ -46,11 +66,15 @@ export default class Girls extends Component {
                     responsive={responsive}
                     style={this.props.style}
                 >
-                    <Girl Height={this.props.style}/>
-                    <Girl Height={this.props.style}/>
-                    <Girl Height={this.props.style}/>
-                    <Girl Height={this.props.style}/>
-                    <Girl Height={this.props.style}/>
+                    {this.state.girls.map((data) => {
+                        return (
+                            <Girl 
+                                Height={this.props.style} 
+                                Data={data} 
+                                key={data.url}
+                            />
+                        )
+                    })}
                 </OwlCarousel>
                 
                 {/* History modal */}

@@ -16,10 +16,10 @@ export default class Price extends Component {
 
     //Put (,) in thousands
     format = e => {
-        var num = e.target.value.replace(/\,/g,'');
+        var num = e.target.value.replace(/,/g,'');
 
-        num = num.toString().split('').reverse().join('').replace(/(?=\d*\,?)(\d{3})/g,'$1,');
-        num = num.split('').reverse().join('').replace(/^[\,]/,'');
+        num = num.toString().split('').reverse().join('').replace(/(?=\d*,?)(\d{3})/g,'$1,');
+        num = num.split('').reverse().join('').replace(/^[,]/,'');
 
         if (e.target.name === "min") {
             this.setState({

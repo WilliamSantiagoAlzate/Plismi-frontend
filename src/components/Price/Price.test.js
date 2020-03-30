@@ -18,9 +18,12 @@ it('Test the output values and format function', () => {
 
     expect(result).toBe('$50 - $100');
 
-    // Error with the JavaScript function (.replace is not a funcion)
-    //
-    // const inputMin = wrapper.find('input').at(0);
-    // inputMin.simulate('change', { target: { name: 'min', value: 100000 } });
-    // expect(wrapper.state('minOutput')).toBe('100,000')
+    const inputMin = wrapper.find('input').at(0);
+    const inputMax = wrapper.find('input').at(1);
+
+    inputMin.simulate('change', { target: { name: 'min', value: "100000" } });
+    inputMax.simulate('change', { target: { name: 'max', value: "200000" } });
+
+    expect(wrapper.state('minOutput')).toBe('100,000')
+    expect(wrapper.state('maxOutput')).toBe('200,000')
 });
