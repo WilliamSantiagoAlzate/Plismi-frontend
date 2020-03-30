@@ -7,6 +7,12 @@ import './Pay.css';
 
 //Create component
 export default class Pay extends Component {
+
+    state = {
+        link: window.location.href,
+        origin: window.location.origin
+    }
+
     render() {
         return (
             //Bootstrap modal
@@ -45,7 +51,7 @@ export default class Pay extends Component {
                             </Link>
 
                             {/* Credit card mode button */}
-                            { window.location.href === window.location.origin + "/creditcard" ? null :
+                            { this.state.link === this.state.origin + "/creditcard" ? null :
                                 <Link className="pay-buttons" to="/creditcard">
                                     <i className="fas fa-credit-card logo-pay"></i>
                                 </Link>

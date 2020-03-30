@@ -7,6 +7,12 @@ import './SettingsUser.css';
 
 //Create component
 export default class SettingsUser extends Component {
+
+    state = {
+        link: window.location.href,
+        origin: window.location.origin
+    }
+
     render() {
         return (
             //Bootstrap modal
@@ -53,7 +59,7 @@ export default class SettingsUser extends Component {
                             </div>
 
                             {/* Edit profile button */}
-                            { window.location.href === window.location.origin + "/editUser" ? null :
+                            { this.state.link === this.state.origin + "/editUser" ? null :
                                 <div className="text-center">
                                     <Link className="pay-buttons" to="/editUser">
                                         <i className="fas fa-user-edit logo-pay"></i>

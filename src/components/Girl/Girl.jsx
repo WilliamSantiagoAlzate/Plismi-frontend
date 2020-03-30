@@ -20,10 +20,10 @@ export default class Girl extends Component {
 
                 {/* Description girl */}
                 <div className="girl-description">
-                    <h2>Nombre</h2>
-                    <p>Contenido</p>
+                    <h2>Name</h2>
+                    <p>Content</p>
                     <a className="btn btn-outline-danger" href="#">
-                        Contactar
+                        Contact
                     </a>
                 </div>
 
