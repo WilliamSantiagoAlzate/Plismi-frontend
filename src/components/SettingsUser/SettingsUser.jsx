@@ -73,7 +73,10 @@ export default class SettingsUser extends Component {
                                 <a 
                                     className="pay-buttons" 
                                     data-dismiss="modal"
-                                    href="#" 
+                                    onClick={() => {
+                                        localStorage.removeItem('usertoken');
+                                        window.location.replace(window.location.origin);
+                                    }} 
                                 >
                                     <i className="fas fa-door-open logo-pay"></i>
                                 </a>

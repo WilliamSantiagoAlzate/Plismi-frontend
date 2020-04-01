@@ -1,6 +1,9 @@
 //Import react libraries
 import React, { Component } from "react";
 
+//Import axios library
+import axios from 'axios';
+
 //Import style
 import './User.css';
 
@@ -10,6 +13,28 @@ import SettingsUser from "../../components/SettingsUser/SettingsUser";
 
 //Create component
 export default class User extends Component {
+
+    state = {
+        name: "",
+        age: "",
+        phoneNumber: "",
+        email: ""
+    }
+
+    //Get user data from database
+    async componentDidMount() {
+        await axios.get('http://localhost:4000/api/users/' + 
+            localStorage.getItem('userid') 
+        ).then(res => {
+            this.setState({
+                name: res.data.name,
+                age: res.data.age,
+                phoneNumber: res.data.phoneNumber,
+                email: res.data.email
+            })
+        })
+    }
+
     render() {
         return (
             <div className="user mt-5">
@@ -36,7 +61,8 @@ export default class User extends Component {
                                 <input 
                                     className="form-control" 
                                     disabled
-                                    placeholder="Name" 
+                                    placeholder="Name"
+                                    value={this.state.name} 
                                 />
                             </div>
 
@@ -48,7 +74,8 @@ export default class User extends Component {
                                 <input 
                                     className="form-control" 
                                     disabled
-                                    placeholder="Age" 
+                                    placeholder="Age"
+                                    value={this.state.age} 
                                 />
                             </div>
 
@@ -60,7 +87,8 @@ export default class User extends Component {
                                 <input 
                                     className="form-control" 
                                     disabled
-                                    placeholder="Phone number" 
+                                    placeholder="Phone number"
+                                    value={this.state.phoneNumber} 
                                 />
                             </div>
 
@@ -72,7 +100,8 @@ export default class User extends Component {
                                 <input 
                                     className="form-control" 
                                     disabled
-                                    placeholder="Email" 
+                                    placeholder="Email"
+                                    value={this.state.email} 
                                 />
                             </div>
 

@@ -39,7 +39,8 @@ export default class SignIn extends Component {
             } else if (res.data === "The Email is not registered") {
                 alert('The Email is not registered');
             } else {
-                localStorage.setItem('usertoken', res.data)
+                localStorage.setItem('usertoken', res.data[0]);
+                localStorage.setItem('userid', res.data[1]);
                 window.location.replace(window.location.origin + "/girls");
             }
         })

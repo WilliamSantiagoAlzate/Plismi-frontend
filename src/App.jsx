@@ -1,6 +1,9 @@
 //Import react libraries
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
+
+//Import authentication
+import isAuth from './settings/setupAuth';
 
 //Import components
 import Footer from "./components/Footer/Footer";
@@ -68,66 +71,76 @@ export default class App extends Component {
           <Route path="/signup">
             <SignUp/>
           </Route>
-
+          
           {/* Girls page */}
-          <Route path="/girls">
-            <div className="App">
-              <Header/>
-              <Girls 
-                onResize={this.changeHeight}
-                style={this.state.style}
-              />
-              <Footer Icon="fas fa-history" Link="history-modal"/>
-            </div>
-          </Route>
+          {isAuth() ? (
+            <Route path="/girls">
+              <div className="App">
+                <Header/>
+                <Girls 
+                  onResize={this.changeHeight}
+                  style={this.state.style}
+                />
+                <Footer Icon="fas fa-history" Link="history-modal"/>
+              </div>
+            </Route>
+          ) : <Redirect to="/signin"/>}          
 
           {/* Filter page */}
-          <Route path="/filter">
-            <div className="App">
-              <Header/>
-              <Filter
-                onResize={this.changeHeight}
-                style={this.state.style}
-              />
-              <Footer Icon="fas fa-funnel-dollar" Link="price-modal"/>
-            </div>
-          </Route>
+          {isAuth() ? (
+            <Route path="/filter">
+              <div className="App">
+                <Header/>
+                <Filter
+                  onResize={this.changeHeight}
+                  style={this.state.style}
+                />
+                <Footer Icon="fas fa-funnel-dollar" Link="price-modal"/>
+              </div>
+            </Route>
+          ) : <Redirect to="/signin"/>}
 
           {/* User page */}
-          <Route path="/user">
-            <div className="App">
-              <Header/>
-              <User
-                onResize={this.changeHeight}
-                style={this.state.style}
-              />
-              <Footer Icon="fas fa-user-cog" Link="settings-modal"/>
-            </div>
-          </Route>
+          {isAuth() ? (
+            <Route path="/user">
+              <div className="App">
+                <Header/>
+                <User
+                  onResize={this.changeHeight}
+                  style={this.state.style}
+                />
+                <Footer Icon="fas fa-user-cog" Link="settings-modal"/>
+              </div>
+            </Route>
+          ) : <Redirect to="/signin"/>}
 
           {/* Pay with credit card page */}
-          <Route path="/creditcard">
-            <div className="App">
-              <Header/>
-              <CreditCard
-                onResize={this.changeHeight}
-                style={this.state.style}
-              />
-              <Footer Icon="fas fa-money-check-alt" Link="pay-modal"/>
-            </div>
+          {isAuth() ? (
+            <Route path="/creditcard">
+              <div className="App">
+                <Header/>
+                <CreditCard
+                  onResize={this.changeHeight}
+                  style={this.state.style}
+                />
+                <Footer Icon="fas fa-money-check-alt" Link="pay-modal"/>
+              </div>
           </Route>
+          ) : <Redirect to="/signin"/>}
 
           {/* Edit user page */}
-          <Route path="/editUser">
-            <div className="App">
-              <Header/>
-              <EditUser
-                onResize={this.changeHeight}
-                style={this.state.style}
-              />
-              <Footer Icon="fas fa-user-cog" Link="settings-modal"/>
-            </div>
-          </Route>
+          {isAuth() ? (
+            <Route path="/editUser">
+              <div className="App">
+                <Header/>
+                <EditUser
+                  onResize={this.changeHeight}
+                  style={this.state.style}
+                />
+                <Footer Icon="fas fa-user-cog" Link="settings-modal"/>
+              </div>
+            </Route>
+          ) : <Redirect to="/signin"/>}
 
         </Switch>
     );

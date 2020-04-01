@@ -1,6 +1,9 @@
 //Import react libraries
 import React, { Component } from "react";
 
+//Import axios library
+import axios from 'axios';
+
 // Import OwlCarousel
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
@@ -27,30 +30,41 @@ const responsive = {
         items:1,
         nav:true
     }
-  };
-
+};
 
 //Create component
 export default class Girls extends Component {
+    _isMounted = false;
 
     state = {
         girls: []
     }
 
     //Get data from Star Wars api while I finish setup my database 
-    async getGirls() {
-        let res = await fetch('https://swapi.co/api/people/?format=json');
-        let data = await res.json();
-        data.results.map((i) => {
-            this.setState({
-                girls: [...this.state.girls, i]
-            })
+    getGirls = async () => {
+        this._isMounted = true;
+
+        await axios.get('https://swapi.co/api/people/?format=json')
+        .then((res) => {
+            if (this._isMounted) {
+                res.data.results.map((i) => {
+                    this.setState({
+                        girls: [...this.state.girls, i]
+                    })
+                });
+            }
+        }).catch((err) => {
+            console.log(err.message);
         });
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.getGirls();
     }
+
+    componentWillUnmount () {
+        this._isMounted = false;
+    } 
 
     render() {
         return (
